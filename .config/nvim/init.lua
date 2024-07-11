@@ -1,0 +1,6 @@
+require "options/keymaps"
+require "options/nvim-tree"
+require "options/options"
+-- require "options/colorizer"
+require "options/lualine"
+require "plugins"

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pkill eww
+pkill myshell
+eww daemon
+
+eww open bar
+eww open notifications

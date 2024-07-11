@@ -1,0 +1,22 @@
+#!/bin/sh
+
+volumen_percent() {
+    VOLUMEN="$(pamixer --get-volume-human | tr -d '%')" 
+    echo ${VOLUMEN} 
+}
+
+volumen_icon() {
+    VOLUMEN="$(pamixer --get-volume)"
+    VOLUMEN_ICONOS=("" "" "" "" "" "")
+    VOLUMEN_INDEX=$(((VOLUMEN / 10) / 2))
+
+    VOLUMEN_ICON=${VOLUMEN_ICONOS[VOLUMEN_INDEX]}
+
+    echo "${VOLUMEN_ICON}"
+}
+
+if [ "$1" = "--volumen" ]; then
+    volumen_percent
+elif [ "$1" = "--volumen-icono" ]; then
+    volumen_icon
+fi
